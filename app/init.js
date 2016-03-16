@@ -32,7 +32,7 @@ function gridTemplate() {
 gridElement.innerHTML = gridTemplate();
 
 let birthdateElement = document.getElementById('birthdate');
-let today = new Date()
+let today = new Date();
 today.setHours(0, 0, 0, 0);
 
 const TOTAL_YEARS_MINUS_ONE_DAY_IN_MS = ((TOTAL_YEARS * DAYS_IN_YEAR) - 1)
