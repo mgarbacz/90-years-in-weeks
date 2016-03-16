@@ -1,7 +1,8 @@
 let dateHelper = {
   getToday() {
-    let today = new Date();         // creates a full Date & time object
-    today.setUTCHours(0, 0, 0, 0);  // sets Hours/Minutes/Seconds/MS to 0
+    let today = new Date();
+    // Set the hours, minutes, seconds, ms to 0 so that we have a just the date
+    today.setUTCHours(0, 0, 0, 0);
     return today;
   },
   getTodayInMs() {

@@ -6,8 +6,8 @@ const HOURS_IN_DAY = 24;
 const DAYS_IN_YEAR = 365.25;
 
 // Grid Value Constants
-const WEEKS_IN_YEAR = 52;
-const TOTAL_YEARS = 90;
+const WEEKS_IN_YEAR = 52; // yeah we are cheating a bit here
+const TOTAL_YEARS = 90;   // Tim Urban's TED talk went to 90
 
 // Export
 module.exports = {

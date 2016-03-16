@@ -1,17 +1,14 @@
 let constants = require('constants');
+let dateHelper = require('date-helper');
 let grid = require('grid');
 let birthdate = require('birthdate');
 
-let today = new Date();
-today.setUTCHours(0, 0, 0, 0);
-let defaultDate = new Date(today.getTime());
-defaultDate.setUTCFullYear(today.getUTCFullYear() - constants.TOTAL_YEARS);
-birthdate.setBirthdate(defaultDate);
-
-function renderGrid() {
-  let weeksAlive = birthdate.getWeeksSinceBirthdate(today);
+// When the birthdate is changed, rerender the grid with the updated weeks alive
+birthdate.setupInputListener(function() {
+  let weeksAlive = birthdate.getWeeksSinceBirthdate();
   grid.render(weeksAlive);
-}
+});
 
-birthdate.birthdateElement.addEventListener('input', renderGrid);
-renderGrid();
+// For starters, set a default birthdate of TOTAL_YEARS ago
+let defaultDate = dateHelper.getYearsAgoFromToday(constants.TOTAL_YEARS);
+birthdate.setBirthdate(defaultDate);
