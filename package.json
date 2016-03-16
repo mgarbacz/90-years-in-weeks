@@ -1,0 +1,15 @@
+{
+  "name": "90-years-in-weeks",
+  "version": "0.0.1",
+  "description": "A calendar of a 90 year life in weeks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgarbacz/90-years-in-weeks.git"
+  },
+  "author": "Michal Garbacz <mich.garbacz+dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgarbacz/90-years-in-weeks/issues"
+  },
+  "homepage": "https://github.com/mgarbacz/90-years-in-weeks#readme"
+}
