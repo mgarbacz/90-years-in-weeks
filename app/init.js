@@ -1,6 +1,6 @@
 const WEEKS_IN_YEAR = 52;
 const TOTAL_YEARS = 90;
-let grid = document.getElementById('grid');
+let gridElement = document.getElementById('grid');
 
 function weekTemplate() {
   return '<div class="week"></div>';
@@ -22,4 +22,26 @@ function gridTemplate() {
   return gridHtml;
 }
 
-grid.innerHTML = gridTemplate();
+gridElement.innerHTML = gridTemplate();
+
+let birthdateElement = document.getElementById('birthdate');
+
+function setFilled(event) {
+  let birthdate = new Date(birthdateElement.value);
+  let milliseconds = Date.now() - birthdate.getTime();
+  let seconds = milliseconds / 1000;
+  let minutes = seconds / 60;
+  let hours = minutes / 60;
+  let days = hours / 24;
+  let weeks = days / 7;
+
+  var weekBoxElements = document.getElementsByClassName('week');
+  for (let i = 0; i < weekBoxElements.length; i++) {
+    let element = weekBoxElements[i];
+    if (i < weeks) element.classList.add('filled');
+    else element.classList.remove('filled');
+  }
+}
+
+birthdateElement.addEventListener('input', setFilled);
+setFilled();

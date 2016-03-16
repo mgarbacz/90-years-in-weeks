@@ -2,6 +2,7 @@ body {
   font-family: "Open Sans", Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 *,
@@ -14,8 +15,12 @@ body {
   text-align: center;
 }
 
-@week-box-size: 8px;
-@week-box-margin: 4px;
+.birthdate-container {
+  margin-bottom: 20px;
+}
+
+@week-box-size: 6px;
+@week-box-margin: 0.5px;
 @year-line-length: 52 * (@week-box-size + (2 * @week-box-margin));
 .grid {
   display: flex;
@@ -36,4 +41,9 @@ body {
   height: @week-box-size;
   width: @week-box-size;
   margin: @week-box-margin;
+}
+
+.week.filled {
+  border-color: lightblue;
+  background-color: lightblue;
 }
