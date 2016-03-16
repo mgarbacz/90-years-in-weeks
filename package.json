@@ -6,7 +6,11 @@
     "type": "git",
     "url": "git+https://github.com/mgarbacz/90-years-in-weeks.git"
   },
-  "author": "Michal Garbacz <mich.garbacz+dev@gmail.com>",
+  "author": {
+    "name": "Michal Garbacz",
+    "email": "michal@garbacz.io",
+    "url": "http://michal.garbacz.io"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mgarbacz/90-years-in-weeks/issues"
