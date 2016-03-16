@@ -10,5 +10,5 @@ birthdate.setupInputListener(function() {
 });
 
 // For starters, set a default birthdate of TOTAL_YEARS ago
-let defaultDate = dateHelper.getYearsAgoFromToday(constants.TOTAL_YEARS);
+let defaultDate = dateHelper.yearsAgoFromToday(constants.TOTAL_YEARS);
 birthdate.setBirthdate(defaultDate);

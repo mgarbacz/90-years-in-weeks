@@ -11,7 +11,7 @@ let birthdate = {
 
   getWeeksSinceBirthdate() {
     let birthday = new Date(this.birthdateElement.value);
-    let milliseconds = dateHelper.getTodayInMs() - birthday.getTime();
+    let milliseconds = dateHelper.todayInMs() - birthday.getTime();
     let seconds = milliseconds / constants.MS_IN_SECOND;
     let minutes = seconds / constants.SECONDS_IN_MINUTE;
     let hours = minutes / constants.MINUTES_IN_HOUR;
