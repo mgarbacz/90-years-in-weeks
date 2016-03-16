@@ -33,7 +33,8 @@ function setFilled(event) {
   let minutes = seconds / 60;
   let hours = minutes / 60;
   let days = hours / 24;
-  let weeks = days / 7;
+  let years = days / 365.25;
+  let weeks = years * 52;
 
   var weekBoxElements = document.getElementsByClassName('week');
   for (let i = 0; i < weekBoxElements.length; i++) {
