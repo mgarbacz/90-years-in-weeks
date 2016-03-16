@@ -13,5 +13,8 @@ module.exports = {
         'stylesheets/app.css': /^app\/styles/
       }
     }
+  },
+  server: {
+    hostname: '0.0.0.0'
   }
 };
