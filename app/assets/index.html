@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <title>90 years in weeks</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet">
   <link href="stylesheets/app.css" rel="stylesheet">
@@ -15,7 +14,29 @@
     <input id="birthdate" type="date" name="birthdate">
   </div>
 
-  <div id="grid" class="grid"></div>
+  <div class="grid-container">
+    <div class="grid-marker grid-marker-column">
+      <div class="grid-marker grid-marker-row">
+        <div class="marker marker-year">
+          <h2>YEARS</h2>
+        </div>
+        <div id="grid" class="grid"></div>
+        <div class="marker marker-legend">
+          <div class="marker-legend-item">
+            <div class="week filled"></div>
+            <h2>Lived</h2>
+          </div>
+          <div class="marker-legend-item">
+            <div class="week"></div>
+            <h2>Remaining</h2>
+          </div>
+        </div>
+      </div>
+      <div class="marker marker-week">
+        <h2>WEEKS</h2>
+      </div>
+    </div>
+  </div>
 
   <script src="javascripts/app.js"></script>
   <script>require('init');</script>

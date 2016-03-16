@@ -15,15 +15,75 @@ body {
 }
 
 .title {
+  font-size: 1.8em;
   text-align: center;
   width: 360px;
+}
+
+.grid-container {
+  margin: 5px;
+}
+
+.grid-marker {
+  display: flex;
+  justify-content: center;
+}
+.grid-marker-row {
+  flex-direction: row;
+}
+
+.grid-marker-column {
+  flex-direction: column;
+}
+
+.marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker h2 {
+  color: lightgray;
+  font-weight: normal;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.marker-week {
+  height: 1.5em;
+  flex-direction: row;
+}
+
+.marker-year,
+.marker-legend {
+  width: 1.5em;
+  flex-direction: column;
+}
+
+.marker-year h2 {
+  transform: rotate(-90deg);
+}
+
+.marker-legend-item {
+  transform: rotate(90deg);
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker-legend-item .week {
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
 }
 
 .grid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 .year {
