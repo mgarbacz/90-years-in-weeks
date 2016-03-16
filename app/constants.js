@@ -8,12 +8,6 @@ const DAYS_IN_YEAR = 365.25;
 // Grid Value Constants
 const WEEKS_IN_YEAR = 52;
 const TOTAL_YEARS = 90;
-const TOTAL_YEARS_IN_MS = TOTAL_YEARS
-  * DAYS_IN_YEAR
-  * HOURS_IN_DAY
-  * MINUTES_IN_HOUR
-  * SECONDS_IN_MINUTE
-  * MS_IN_SECOND;
 
 // Export
 module.exports = {
@@ -23,6 +17,5 @@ module.exports = {
   HOURS_IN_DAY,
   DAYS_IN_YEAR,
   WEEKS_IN_YEAR,
-  TOTAL_YEARS,
-  TOTAL_YEARS_IN_MS
+  TOTAL_YEARS
 };
