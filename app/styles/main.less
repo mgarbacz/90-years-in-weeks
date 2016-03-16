@@ -14,9 +14,13 @@ body {
   text-align: center;
 }
 
+@week-box-size: 8px;
+@week-box-margin: 4px;
+@year-line-length: 52 * (@week-box-size + (2 * @week-box-margin));
 .grid {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .year {
@@ -24,11 +28,12 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  width: @year-line-length;
 }
 
 .week {
   border: 1px solid lightgray;
-  height: 8px;
-  width: 8px;
-  margin: 4px;
+  height: @week-box-size;
+  width: @week-box-size;
+  margin: @week-box-margin;
 }
