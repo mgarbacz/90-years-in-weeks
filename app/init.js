@@ -1,27 +1,7 @@
 let constants = require('constants');
-let gridElement = document.getElementById('grid');
+let grid = require('grid');
 
-function weekTemplate() {
-  return '<div class="week"></div>';
-}
-
-function yearTemplate() {
-  let yearHtml = '<div class="year">';
-  for(let i = 0; i < constants.WEEKS_IN_YEAR; i++) {
-    yearHtml += weekTemplate();
-  }
-  return yearHtml + '</div>';
-}
-
-function gridTemplate() {
-  let gridHtml = '';
-  for(let i = 0; i < constants.TOTAL_YEARS; i++) {
-    gridHtml += yearTemplate();
-  }
-  return gridHtml;
-}
-
-gridElement.innerHTML = gridTemplate();
+grid.render();
 
 let birthdateElement = document.getElementById('birthdate');
 let today = new Date();
@@ -39,7 +19,6 @@ function setFilled(event) {
   let days = hours / constants.HOURS_IN_DAY;
   let years = days / constants.DAYS_IN_YEAR;
   let weeks = Math.round(years * constants.WEEKS_IN_YEAR);
-
 
   var weekBoxElements = document.getElementsByClassName('week');
   for (let i = 0; i < weekBoxElements.length; i++) {
