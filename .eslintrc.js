@@ -4,7 +4,10 @@ module.exports = {
     "commonjs": true,
     "es6": true
   },
-  "extends": "eslint:recommended",
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "indent": [
       "error",
@@ -21,6 +24,8 @@ module.exports = {
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   }
 };

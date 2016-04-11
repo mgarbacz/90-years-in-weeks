@@ -1,35 +1,32 @@
 let constants = require('constants');
+const Year = require('grid/year');
 
 let grid = {
   gridElement: document.getElementById('grid'),
-  fillWeeks: 0,
 
-  weekTemplate(weekNumber) {
-    let classString = 'week';
-    if (weekNumber < this.fillWeeks) classString += ' filled';
-    return `<div class="${classString}"></div>`;
-  },
+  gridTemplate({props}) {
+    // let gridHtml = '';
+    // for(let i = 0; i < constants.TOTAL_YEARS; i++) {
+    //   gridHtml += this.yearTemplate(i);
+    // }
+    // return gridHtml;
+    const {fillWeeks} = props;
 
-  yearTemplate(year) {
-    let yearHtml = '<div class="year">';
-    for(let i = 0; i < constants.WEEKS_IN_YEAR; i++) {
-      let weekNumber = (year * constants.WEEKS_IN_YEAR) + i;
-      yearHtml += this.weekTemplate(weekNumber);
-    }
-    return yearHtml + '</div>';
-  },
+    const years$ = [...Array(constants.TOTAL_YEARS).keys()];
 
-  gridTemplate() {
-    let gridHtml = '';
-    for(let i = 0; i < constants.TOTAL_YEARS; i++) {
-      gridHtml += this.yearTemplate(i);
-    }
-    return gridHtml;
+    const years = years$
+      .map(year => <Year year={year} fillWeeks={fillWeeks} />);
+
+    console.log(years);
+
+    return (
+      <div>{years}</div>
+    );
   },
 
   render(weeks) {
-    this.fillWeeks = weeks;
-    this.gridElement.innerHTML = this.gridTemplate();
+    console.log(weeks);
+    Yolk.render(<this.gridTemplate fillWeeks={weeks}/>, this.gridElement);
   }
 };
 
