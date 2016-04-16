@@ -1,15 +1,20 @@
-let constants = require('constants');
-let dateHelper = require('date-helper');
-let birthdate = require('birthdate');
+const constants = require('constants');
+const dateHelper = require('date-helper');
 const Grid = require('grid/grid');
+const Birthdate = require('birthdate');
 
-// When the birthdate is changed, rerender the grid with the updated weeks alive
-birthdate.setupInputListener(function() {
-  const weeksAlive = birthdate.getWeeksSinceBirthdate();
-  const gridElement = document.getElementById('grid');
-  Yolk.render(<Grid fillWeeks={weeksAlive} />, gridElement);
-});
+function App() {
+  const defaultDate = dateHelper.yearsAgoFromToday(constants.TOTAL_YEARS);
+  const date = defaultDate.toISOString().split('T')[0];
+  const weeksAlive = dateHelper.getWeeksSinceBirthdate(defaultDate);
 
-// For starters, set a default birthdate of TOTAL_YEARS ago
-let defaultDate = dateHelper.yearsAgoFromToday(constants.TOTAL_YEARS);
-birthdate.setBirthdate(defaultDate);
+  return (
+    <div className="container">
+      <h1 className="title">90 years in weeks</h1>
+      <Birthdate date={date} />
+      <Grid fillWeeks={weeksAlive} />
+    </div>
+  );
+}
+
+Yolk.render(<App />, document.getElementById('container'));
