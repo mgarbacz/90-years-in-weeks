@@ -27,7 +27,7 @@ function Year({props}) {
   // return yearHtml + '</div>';
 
   return (
-    <div className={'year'}>{weeks}</div>
+    <div className="year">{weeks}</div>
   );
 }
 

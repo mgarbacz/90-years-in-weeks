@@ -1,7 +1,7 @@
 const constants = require('constants');
 const Year = require('grid/year');
 
-function Grid({props, createEventHandler}) {
+function Grid({props}) {
   // let gridHtml = '';
   // for(let i = 0; i < constants.TOTAL_YEARS; i++) {
   //   gridHtml += this.yearTemplate(i);
@@ -15,7 +15,7 @@ function Grid({props, createEventHandler}) {
     .map(year => <Year year={year} fillWeeks={fillWeeks} />);
 
   return (
-    <div>{years}</div>
+    <div className="grid">{years}</div>
   );
 }
 
