@@ -21,7 +21,9 @@ function Week({props}) {
 
   filled.subscribe(function(fill) {
     let cn = fill ? 'filled': '';
-    classNames[1].onNext(cn);
+    if (classNames[1].value !== cn) {
+      classNames[1].onNext(cn);
+    }
   });
 
   return (

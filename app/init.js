@@ -11,6 +11,7 @@ function App({createEventHandler}) {
   const handleChange = createEventHandler();
 
   handleChange
+    .debounce(200)
     .subscribe(function(event) {
       // console.log(event.target.value.toString());
       let hi = dateHelper.getWeeksSinceBirthdate(new Date(event.target.value));
