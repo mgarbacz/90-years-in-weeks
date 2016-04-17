@@ -3,6 +3,9 @@ function Birthdate({props, createEventHandler}) {
 
   const handleChange = createEventHandler();
 
+  handleChange
+    .subscribe(value => console.log(value));
+    
   return (
     <div className="birthdate-container">
       <label for="birthdate">Enter your birthday</label>
