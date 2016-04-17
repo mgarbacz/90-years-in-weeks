@@ -10,13 +10,6 @@ function Year({props}) {
   const weeks = weeks$
     .map(week => <Week week={week} year={year} fillWeeks={fillWeeks} />);
 
-  // let yearHtml = '<div class="year">';
-  // for(let i = 0; i < constants.WEEKS_IN_YEAR; i++) {
-  //   let weekNumber = (year * constants.WEEKS_IN_YEAR) + i;
-  //   yearHtml += this.weekTemplate(weekNumber);
-  // }
-  // return yearHtml + '</div>';
-
   return (
     <div className="year">{weeks}</div>
   );
